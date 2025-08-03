@@ -123,3 +123,76 @@
     ```
 
     > This is compile time checking, not runtime (unlike const)
+
+## Record
+
+-   `Record` let’s you give a cleaner type to objects
+-   You can type objects like follows -
+
+    ```ts
+    interface UserR {
+    	id: string;
+    	name: string;
+    }
+
+    type Users = { [key: string]: UserR };
+
+    const users: Users = {
+    	abc123: { id: "abc123", name: "John Doe" },
+    	xyz789: { id: "xyz789", name: "Jane Doe" },
+    };
+    ```
+
+-   or use **Record**
+
+    ```ts
+    interface UserR {
+    	id: string;
+    	name: string;
+    }
+
+    type Users = Record<string, UserR>;
+
+    const users: Users = {
+    	abc123: { id: "abc123", name: "John Doe" },
+    	xyz789: { id: "xyz789", name: "Jane Doe" },
+    };
+
+    console.log(users["abc123"]); // Output: { id: 'abc123', name: 'John Doe' }
+    ```
+
+## Map
+
+-   `maps` gives you an even fancier way to deal with objects. Very similar to `Maps` in C++
+
+    ```ts
+    interface UserM {
+    	id: string;
+    	name: string;
+    }
+
+    // Initialize an empty Map
+    const usersMap = new Map<string, UserM>();
+
+    // Add users to the map using .set
+    usersMap.set("abc123", { id: "abc123", name: "John Doe" });
+    usersMap.set("xyz789", { id: "xyz789", name: "Jane Doe" });
+
+    // Accessing a value using .get
+    console.log(usersMap.get("abc123")); // Output: { id: 'abc123', name: 'John Doe' }
+    ```
+
+## Exclude
+
+-   In a function that can accept several types of inputs but you want to exclude specific types from being passed to it.
+
+    ```ts
+    type EventType = "click" | "scroll" | "mousemove";
+    type ExcludeEvent = Exclude<EventType, "scroll">; // 'click' | 'mousemove'
+
+    const handleEvent = (event: ExcludeEvent) => {
+    	console.log(`Handling event: ${event}`);
+    };
+
+    handleEvent("click"); // OK
+    ```

@@ -1,1 +1,11 @@
-{"root":["./src/index.ts","./src/partial.ts","./src/pick.ts","./src/readonly.ts"],"version":"5.8.3"}
+{
+	"root": [
+		"./src/index.ts",
+		"./src/map.ts",
+		"./src/partial.ts",
+		"./src/pick.ts",
+		"./src/readonly.ts",
+		"./src/record.ts"
+	],
+	"version": "5.8.3"
+}
