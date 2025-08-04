@@ -18,5 +18,10 @@
 	"bugs": {
 		"url": "https://github.com/akashdeep023/typescript-advance/issues"
 	},
-	"homepage": "https://github.com/akashdeep023/typescript-advance#readme"
+	"homepage": "https://github.com/akashdeep023/typescript-advance#readme",
+	"dependencies": {
+		"@types/express": "^5.0.3",
+		"express": "^5.1.0",
+		"zod": "^4.0.14"
+	}
 }

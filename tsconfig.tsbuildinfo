@@ -1,11 +1,13 @@
 {
 	"root": [
+		"./src/exclude.ts",
 		"./src/index.ts",
 		"./src/map.ts",
 		"./src/partial.ts",
 		"./src/pick.ts",
 		"./src/readonly.ts",
-		"./src/record.ts"
+		"./src/record.ts",
+		"./src/type-inference-in-zod.ts"
 	],
 	"version": "5.8.3"
 }
